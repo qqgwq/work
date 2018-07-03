@@ -1,0 +1,13 @@
+.col-md-6
+  form.simple_form
+  .form-group.string.disabled
+    label.string.disabled.control-label for="url_original_url"  Your original URL was:
+    input#url_original_url.string.disabled.form-control disabled="disabled" value="#{@url.original_url}"
+
+  p.larger
+    | shortened URL is: &nbsp;
+    span#short-url #{request.base_url}/#{@url.short_url}
+  
+  .views
+    访问计数
+    = @url.visit_count

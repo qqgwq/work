@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180703083139) do
+ActiveRecord::Schema.define(version: 20180703110905) do
 
-  create_table "links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "original_url"
     t.string "short_url"
-    t.string "original_url"
+    t.string "sanitized_url"
+    t.integer "visit_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

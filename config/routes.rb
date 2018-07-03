@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :links
-  get 'short_url' => 'links#show'
+  get "/:short_url", to: "urls#show"
+  get "shortened/:short_url", to: "urls#shortened", as: :shortened
+  resources :urls, only: [:create, :new]
 end

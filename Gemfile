@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'redis-objects'
 gem 'bitly'
+gem 'slim'
+gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -40,6 +42,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'rspec-rails'
 end
 
 group :development do
