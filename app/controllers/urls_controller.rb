@@ -7,6 +7,7 @@ class UrlsController < ApplicationController
 
   def show
     redirect_to @url.sanitized_url
+    @url.views
   end
 
 

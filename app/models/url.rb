@@ -1,6 +1,5 @@
 class Url < ApplicationRecord
   include Redis::Objects
-  counter :views
   validates :original_url, presence: true, on: :create
   before_create :generate_short_url
 
@@ -26,6 +25,8 @@ class Url < ApplicationRecord
   end
 
   def views
-    self.increment!(:visit_count)
+    #self.increment!(:visit_count)
+    self.visit_count += 1
+    save!
   end
 end
